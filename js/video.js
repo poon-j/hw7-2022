@@ -1,8 +1,6 @@
 var video;
 var muted = false;
 
-
-//page load
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
 	video = document.getElementById("player1");
@@ -44,14 +42,13 @@ window.addEventListener("load", function() {
 	document.querySelector("#orig").addEventListener("click", function() {
 		video.classList.remove("oldSchool");
 	});
-
 });
-
 
 function updateVolume() {
 	video.volume = document.getElementById("slider").value / 100;
 	document.getElementById("volume").innerHTML = document.getElementById("slider").value + "%";
 }
+
 function muteToggle() {
 	if (muted) {
 		document.getElementById("mute").innerHTML = "Mute";
