@@ -1,5 +1,4 @@
 var video;
-var muted = false;
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window")
@@ -55,16 +54,13 @@ function skipAhead() {
 }
 
 function muteToggle() {
-	if (muted) {
-		console.log("Unmute");
+	if (video.muted) {
+		video.muted = false;
 		document.getElementById("mute").innerHTML = "Mute";
-		video.volume = document.getElementById("slider").value / 100;
-		muted = false;
 	}
 	else {
-		console.log("Mute");
+		video.muted = true;
 		document.getElementById("mute").innerHTML = "Unmute";
-		video.volume = 0;
-		muted = true;
+
 	}
 }
