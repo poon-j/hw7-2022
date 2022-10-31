@@ -61,6 +61,5 @@ function muteToggle() {
 	else {
 		video.muted = true;
 		document.getElementById("mute").innerHTML = "Unmute";
-
 	}
 }
