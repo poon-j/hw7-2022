@@ -53,6 +53,7 @@ function skipAhead() {
 		video.currentTime = 0;
 	console.log("Video time: " + video.currentTime);
 }
+
 function muteToggle() {
 	if (muted) {
 		console.log("Unmute");
