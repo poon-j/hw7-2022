@@ -25,10 +25,7 @@ window.addEventListener("load", function() {
 		console.log(video.playbackRate);
 	});
 	document.querySelector("#skip").addEventListener("click", function() {
-		if (video.currentTime <= video.duration - 10)
-			video.currentTime += 10;
-		else
-			video.currentTime = 0;
+		skipAhead();
 	});
 	document.querySelector("#mute").addEventListener("click", function() {
 		muteToggle();
@@ -49,13 +46,22 @@ function updateVolume() {
 	document.getElementById("volume").innerHTML = document.getElementById("slider").value + "%";
 }
 
+function skipAhead() {
+	if (video.currentTime <= video.duration - 10)
+		video.currentTime += 10;
+	else
+		video.currentTime = 0;
+	console.log("Video time: " + video.currentTime);
+}
 function muteToggle() {
 	if (muted) {
+		console.log("Unmute");
 		document.getElementById("mute").innerHTML = "Mute";
 		video.volume = document.getElementById("slider").value / 100;
 		muted = false;
 	}
 	else {
+		console.log("Mute");
 		document.getElementById("mute").innerHTML = "Unmute";
 		video.volume = 0;
 		muted = true;
